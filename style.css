@@ -1,0 +1,1242 @@
+/******************************
+[Author]
+Name: Josiah Danielle Gallenero
+Portfolio: https://josiahh.vercel.app/
+
+[License]
+This CSS file was authored by Josiah Danielle Gallenero.
+You are free to use and modify this stylesheet for personal or educational projects.
+However, **please do not remove this comment** block as a courtesy to the original author.
+
+[Table of Contents]
+1. General Styles
+2. Header
+3. Navigation
+4. Hero Section
+5. About Section
+6. Stats Section
+7. Doctor Section
+8. Buttons
+9. Offering Section
+10. Services Section
+11. Contact Section
+12. Footer
+13. Responsive Styles
+******************************/
+
+/******************************
+1. General Styles
+******************************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+.header-style {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-style h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #38c49c;
+    border-bottom: 2px solid #38c49c;
+}
+
+.header-style p {
+    color: #777;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/******************************
+2. Header
+******************************/
+header {
+    background-color: white;
+    padding: 28px 100px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    text-transform: uppercase;
+}
+
+header h1 span {
+    font-size: 1em;
+    color: #38c49c;
+}
+
+header .phone-icon {
+    color: #38c49c;
+    font-size: 15px;
+}
+
+header .phone {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+header span {
+    color: grey;
+    margin: 0px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header ul li {
+    display: inline-block;
+    margin-right: -10px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: grey;
+    transition: color 0.3s;
+    font-size: 0.9em;
+}
+
+header ul li a:hover {
+    color: #38c49c;
+}
+
+#menu-toggle,
+.hamburger-label i {
+    display: none;
+}
+
+#menu-toggle:checked+.hamburger-label i {
+    transform: rotate(90deg);
+}
+
+#menu-toggle:checked+.hamburger-label+ul {
+    display: flex;
+}
+
+.hamburger-label {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hamburger-label i {
+    color: #333;
+    transition: transform 0.3s ease-in-out;
+}
+
+/******************************
+3. Navigation
+******************************/
+nav {
+    background-color: #38c49c;
+    padding: 15px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #c0f0e8;
+}
+
+nav .search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    overflow: hidden;
+    background-color: white;
+    padding: 0px 10px;
+}
+
+nav .search-bar input[type="search"] {
+    flex: 1;
+    padding: 5px 12px;
+    border: none;
+    outline: none;
+    font-size: 0.8em;
+    background-color: transparent;
+}
+
+nav .search-bar button {
+    background: none;
+    border: none;
+    font-size: 1.1em;
+    padding: 10px 14px;
+    cursor: pointer;
+    color: black;
+}
+
+nav .search-bar button:hover {
+    background-color: #f4f4f4;
+}
+
+
+/******************************
+4. Hero Section
+******************************/
+.hero {
+    background-image: url('images/index_hero.jpg.webp');
+    background-size: 130%;
+    background-position: center;
+    padding: 50px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: white;
+    min-height: 600px;
+    transition: background-size 0.5s ease;
+}
+
+.hero:hover {
+    background-size: 150%;
+}
+
+.hero .content {
+    max-width: 600px;
+}
+
+.hero .content h2 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.hero .content span {
+    color: #38c49c;
+}
+
+.hero .content p {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+/******************************
+5. About Section
+******************************/
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.about {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 0 0 48%;
+}
+
+.health-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.health-logo h3 {
+    font-size: 24px;
+    color: #444;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.health-logo span {
+    color: #40c9a2;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.about-image {
+    flex: 0 0 48%;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+/******************************
+6. Stats Section
+******************************/
+.stats-section {
+    background-color: #f5f7fa;
+    padding: 40px 0;
+    margin-top: 100px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    flex: 0 0 23%;
+    text-align: center;
+    padding: 20px 15px;
+}
+
+.stat-icon {
+    color: #40c9a2;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.stat-icon i {
+    font-size: 40px;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-text {
+    color: #777;
+    font-size: 14px;
+}
+
+/******************************
+7. Doctor Section
+******************************/
+.doctors {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.doctors-header {
+    margin-bottom: 50px;
+}
+
+.doctors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.doctor-card {
+    flex: 0 0 23%;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    border-bottom: 5px solid #38c49c;
+}
+.doctor-card:hover {
+    transform: translateY(-5px);
+    border: 5px solid #38c49c;
+    transition: border 0.3s ease, color 0.3s ease;
+}
+
+.doctor-card:hover::after {
+    content: "+";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #38c49c;
+    color: white;
+    padding: 5px 10px;
+    font-size: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.doctor-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.doctor-info {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.doctor-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.doctor-specialty {
+    color: #777;
+    font-size: 14px;
+}
+
+.team-image {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.team-image img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/******************************
+8. Buttons
+******************************/
+.button {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #38c49c;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+    border: none;
+    width: auto;
+    box-sizing: border-box;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: #00695c;
+}
+
+.animated-button {
+    text-decoration: none;
+    background-color: #38c49c;
+    padding: 20px 70px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+}
+
+.text-container {
+    position: relative;
+    width: auto;
+    height: 100%;
+}
+
+.default-text,
+.hover-text {
+    position: absolute;
+    top: 50%;
+    color: #fff !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.hover-text {
+    opacity: 0;
+    transform: translate(-50%, 60%) scale(0.8);
+}
+
+.animated-button:hover .default-text {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.8);
+}
+
+.animated-button:hover .hover-text {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+/******************************
+9. Offering Section
+******************************/
+.offering {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.offering p {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 25px;
+}
+
+.card {
+    flex: 1;
+    background-color: #f5f8fa;
+    border-radius: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card h3 {
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.appointment-card {
+    background-color: #e8ecf4;
+    padding: 25px;
+}
+
+.appointment-card h3 {
+    text-align: center;
+    margin-bottom: 22px;
+    color: #333;
+    font-size: 22px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #666;
+    font-size: 15px;
+}
+
+/******************************
+10. Services Section
+******************************/
+.services {
+    padding: 60px 20px;
+    background-color: #f0f8f8;
+    text-align: center;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+    color: #38c49c;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.medical-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.menu-panel {
+    width: 35%;
+    background-color: #f9f9f9;
+}
+
+.menu-item {
+    padding: 1.5rem;
+    cursor: pointer;
+    border-bottom: 3px solid #38c49c;
+}
+
+.menu-item:hover {
+    background-color: #1ABC9C;
+    color: #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover p {
+    color: #eee;
+}
+
+.menu-item:first-child {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+.menu-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.menu-item i {
+    margin-right: 10px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.4;
+}
+
+.menu-item:first-child p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.content-panel {
+    width: 65%;
+    display: flex;
+    padding: 2rem;
+}
+
+.content-image {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.content-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.specialties {
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.specialty {
+    margin-bottom: 1.5rem;
+}
+
+.specialty h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    display: inline-block;
+    border-bottom: 2px solid #38c49c;
+}
+
+.specialty p {
+    font-size: 0.9rem;
+    color: #777;
+    line-height: 1.5;
+}
+
+/******************************
+11. Contact Section
+******************************/
+.contact {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    font-family: sans-serif;
+} 
+
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-info {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+    flex: 0 0 45%;
+}
+
+.contact-info h3,
+.contact-info h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #2d2d2d;
+    border-bottom: 2px solid #38c49c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contact-info .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-info .info-item div {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin: 4px 0;
+}
+
+/******************************
+12. Footer
+******************************/
+.footer {
+    background-image: url('images/footer.jpg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: left;
+}
+
+.footer-top {
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-bottom {
+    background-color: #111;
+    opacity: 0.6;
+    padding: 15px 100px;
+    color: #fff;
+}
+
+.footer-bottom-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-bottom-bar .footer-extras a,
+.footer-bottom-bar .footer-phone a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7em;
+}
+
+.footer-bottom-bar .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.7em;
+    margin: 0 25px;
+    text-transform: uppercase;
+}
+
+.footer-bottom .footer-phone .phone {
+    color: #38c49c;
+    font-size: 0.9em;
+}
+
+.footer-extras span {
+    margin: 0 5px;
+    color: #aaa;
+}
+
+.footer-phone {
+    color: #1ec57b;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer-phone i {
+    color: #1ec57b;
+}
+
+.footer span {
+    color: #38c49c;
+}
+
+.footer h2,
+.footer h3,
+h4 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px solid #38c49c;
+}
+
+.footer p,
+.footer a {
+    font-size: 1em;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #38c49c;
+}
+
+.footer-section form {
+    max-width: 600px;
+    margin: auto;
+}
+
+.footer .form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .form-row input {
+    flex: 1;
+}
+
+.footer form input,
+.footer form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.footer form input::placeholder,
+.footer form textarea::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.footer form textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.footer form button {
+    padding: 10px 20px;
+    background-color: #38c49c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer form button:hover {
+    background-color: #00695c;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.hours {
+    background-color: rgba(17, 17, 17, 0.5);
+    padding: 30px;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.footer-section.hours h4 {
+    margin-bottom: 40px;
+}
+
+.footer.hours p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+
+/******************************
+13. Responsive Styles
+******************************/
+@media (max-width: 768px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header .vertical-line {
+        display: none;
+    }
+
+    header ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header ul li {
+        margin-bottom: 10px;
+    }
+
+    header ul li:not(:last-child)::after {
+        content: none;
+    }
+
+    header ul li a {
+        font-size: 1.2em;
+    }
+
+    nav {
+        display: none;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger-label i {
+        display: block;
+        font-size: 24px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .hero {
+        padding: 30px 40px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero .content {
+        flex: 1 1 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero .content h2 {
+        font-size: 2em;
+    }
+
+    .hero .content p {
+        font-size: 1em;
+    }
+
+    .hero .image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .about-header h2,
+    .doctors-header h2 {
+        font-size: 28px;
+    }
+
+    .stats-container,
+    .doctors-grid,
+    .doctors-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-item,
+    .doctor-card,
+    .doctor-tab {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .doctor-tab {
+        text-align: center;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .doctor-image {
+        height: 300px;
+    }
+
+    .team-image img {
+        max-height: 150px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .medical-section {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .menu-panel,
+    .content-panel {
+        width: 100%;
+    }
+
+    .content-panel {
+        flex-direction: column;
+        padding: 1rem;
+        align-items: center;
+    }
+
+    .content-image {
+        width: 100%;
+    }
+
+    .doctor-image,
+    .specialties {
+        width: 100%;
+        padding: 0;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-info {
+        flex: 0 0 100%;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+    }
+
+    .contact-header h2 {
+        font-size: 28px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer h2,
+    .footer h3 {
+        font-size: 1.5em;
+    }
+
+    .footer form input,
+    .footer form textarea {
+        padding: 12px;
+    }
+
+    .footer form button {
+        padding: 12px 24px;
+    }
+
+    .footer-bottom {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-links,
+    .footer-extras,
+    .footer-phone {
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a,
+    .footer-extras a,
+    .footer-phone a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 12px;
+    }
+
+    .footer-phone {
+        flex-direction: column;
+    }
+}
