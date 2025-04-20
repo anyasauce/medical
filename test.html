@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Departments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            color: #3cd9aa;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .departments {
+            display: flex;
+            transition: transform 1s ease;
+        }
+
+        .department-card {
+            min-width: 25%;
+            padding: 0 15px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .department-image {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .department-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .department-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.3s ease;
+            pointer-events: none;
+        }
+
+        .department-card:hover .department-image::after {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .department-title {
+            margin: 15px 0 5px;
+            font-size: 20px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .read-more {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .read-more:hover {
+            color: #3cd9aa;
+        }
+
+        .read-more::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #3cd9aa;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .arrow-label {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #3cd9aa;
+            color: white;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .arrow-label::after {
+            content: '→';
+            font-size: 24px;
+        }
+
+        #slide1:checked~.carousel-container .departments {
+            transform: translateX(0);
+        }
+
+        #slide2:checked~.carousel-container .departments {
+            transform: translateX(-25%);
+        }
+
+        #slide3:checked~.carousel-container .departments {
+            transform: translateX(-50%);
+        }
+
+        #slide4:checked~.carousel-container .departments {
+            transform: translateX(-75%);
+        }
+
+        #slide5:checked~.carousel-container .departments {
+            transform: translateX(-100%);
+        }
+
+        #slide1:checked~.arrow-label[for="slide2"] {
+            display: flex;
+        }
+
+        #slide2:checked~.arrow-label[for="slide3"] {
+            display: flex;
+        }
+
+        #slide3:checked~.arrow-label[for="slide4"] {
+            display: flex;
+        }
+
+        #slide4:checked~.arrow-label[for="slide5"] {
+            display: flex;
+        }
+
+        #slide5:checked~.arrow-label[for="slide1"] {
+            display: flex;
+        }
+
+        @media (max-width: 992px) {
+            .department-card {
+                min-width: 33.33%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .department-card {
+                min-width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Our Departments</h1>
+            <p>TO CHOOSE FROM</p>
+        </div>
+
+        <div class="carousel-wrapper">
+            <input type="radio" name="carousel" id="slide1" class="carousel-controls" checked>
+            <input type="radio" name="carousel" id="slide2" class="carousel-controls">
+            <input type="radio" name="carousel" id="slide3" class="carousel-controls">
+            <input type="radio" name="carousel" id="slide4" class="carousel-controls">
+            <input type="radio" name="carousel" id="slide5" class="carousel-controls">
+
+            <div class="carousel-container">
+                <div class="departments">
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_1.jpg.webp" alt="Neonatology Department">
+                        </div>
+                        <h3 class="department-title">Neonatology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_2.jpg.webp" alt="Dentistry Department">
+                        </div>
+                        <h3 class="department-title">Dentistry</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_3.jpg.webp" alt="Orthopedics Department">
+                        </div>
+                        <h3 class="department-title">Orthopedics</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_4.jpg.webp" alt="Laboratory Department">
+                        </div>
+                        <h3 class="department-title">Laboratory</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_1.jpg.webp" alt="Cardiology Department">
+                        </div>
+                        <h3 class="department-title">Cardiology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_2.jpg.webp" alt="Neurology Department">
+                        </div>
+                        <h3 class="department-title">Neurology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_3.jpg.webp" alt="Oncology Department">
+                        </div>
+                        <h3 class="department-title">Oncology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_4.jpg.webp" alt="Radiology Department">
+                        </div>
+                        <h3 class="department-title">Radiology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="department-card">
+                        <div class="department-image">
+                            <img src="images/doc_1.jpg.webp" alt="Neonatology Department">
+                        </div>
+                        <h3 class="department-title">Neonatology</h3>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <label for="slide2" class="arrow-label"></label>
+            <label for="slide3" class="arrow-label"></label>
+            <label for="slide4" class="arrow-label"></label>
+            <label for="slide5" class="arrow-label"></label>
+            <label for="slide1" class="arrow-label"></label>
+        </div>
+    </div>
+</body>
+
+</html>
